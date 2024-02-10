@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Karnaugh Map Simplification Method</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+        .table-title {
+            text-align: left;
+        }
+        .remark {
+            font-style: italic;
+        }
+        .remark-title {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Simplification Method: The Karnaugh Map</h1>
+
+<h2>I. Introduction:</h2>
+<p>
+    In a previous lesson (on Boolean logic), we learned that the method of simplifying equations by performing
+    successive factorizations became very time-consuming and tedious as the number of variables increased.
+    The Karnaugh map method allows us to perform simplifications much more quickly without having to write long equations.
+</p>
+
+<h2>II. The Karnaugh Map:</h2>
+<ul>
+    <li>It is a table of 2<sup>n</sup> cases, n being the number of variables.</li>
+    <li>On the lines and columns, we place the state of the input variables in reflected binary code (Gray code).</li>
+    <li>In each of the cases, we place the state of the output for the corresponding input combinations.</li>
+</ul>
+
+<p>In the example below, the number of variables is 4 because the Karnaugh Map contains 2<sup>4</sup> = 16 cases.</p>
+
+<!-- Placeholder for the first example image -->
+<img src="" alt="Karnaugh Map Example">
+
+<h2>III. Simplification of equations from the Karnaugh Map:</h2>
+<p>
+    The method consists of graphically highlighting, by a graphic process, the terms of a logic function that differ
+    only by the state of a single variable (terms adjacent to each other). If the function logic depends on N variables,
+    there are 2<sup>N</sup> possible cases (principle of the truth table).
+</p>
+
+<!-- Placeholder for the second example image -->
+<img src="path_to_your_second_image.png" alt="Adjacent and Non-Adjacent Cases">
+
+<p class="remark">
+    <span class="remark-title">Remarks:</span><br>
+    - One or more cases can be common to several groupings.<br>
+    - To extract the equation of the function logic, we only retain the variables whose state does not change within a grouping and we apply the same logic (OR) to all the proven groupings.<br>
+    - Grouping of 6 cases is impossible.
+</p>
+
+<p>→ Simplify the equations S1, S2, and S3 previously determined and propose the corresponding logigrams.</p>
+
+<!-- Placeholder for the third example image -->
+<img src="path_to_your_third_image.png" alt="Karnaugh Map Groupings Example">
+
+</body>
+</html>
