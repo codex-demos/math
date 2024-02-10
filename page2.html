@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        max-width: 1000px;
+        margin: auto;
+        margin-bottom: 50px;
+      }
+      .image-group {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .method-summary {
+        border: 1px solid black;
+        margin: 20px 0;
+        padding: 15px;
+      }
+
+      .method-summary ol {
+        padding-left: 20px;
+      }
+
+      .method-summary li {
+        margin-bottom: 10px;
+      }
+
+      .applications {
+        margin-bottom: 20px;
+      }
+
+      .karnaugh-map {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .karnaugh-map img {
+        max-width: 50%;
+      }
+
+      .equations {
+        white-space: nowrap; /* Ensure equations don't wrap */
+        font-family: 'Courier New', monospace; /* Monospace font for equations */
+        margin-bottom: 20px;
+      }
+
+      .equations p {
+        margin: 5px 0; /* Spacing between equations */
+      }
+    </style>
+  </head>
+  <body>
+      <div class="image-group">
+        <p>Examples of possible groupings:</p>
+      <img src="image-3.png" alt="Examples of possible groupings" />
+    </div>
+
+    <div class="image-group">
+        <p>Examples of impossible or redundant groupings:</p>
+      <img
+        src="image-4.png"
+        alt="Examples of impossible or redundant groupings"
+      />
+    </div>
+
+    <div class="method-summary">
+      <p>Summary of the method:</p>
+      <ol>
+        <li>
+          Determine the number of input variables to know the size of the
+          tables.
+        </li>
+        <li>
+          Determine the number of output variables to define the number of
+          tables to perform.
+        </li>
+        <li>
+          Assign to the different products of the non-simplified equation a case
+          of the table respecting the Gray code.
+        </li>
+        <li>
+          Introduce the logical function into the table by positioning a '1' in
+          the cases that validate the function of the output.
+        </li>
+        <li>Perform the grouping of adjacent cases.</li>
+        <li>
+          Output the simplified function by eliminating the input variables that
+          change state.
+        </li>
+      </ol>
+    </div>
+
+    <div class="applications">
+      <h4>IV. Applications</h4>
+      <h4>Equation Simplification</h4>
+      <img src="image-5.png" alt="Equation Simplification Karnaugh map" />
+      <div class="karnaugh-map">
+        <div class="equations">
+          <p>F1 = /abc + c/b/a + /bc/a + /c/ab</p>
+          <p>F2 = ab + /ba</p>
+          <p>F3 = /d/cba + /dcb/a + /dc/ba + /d/cba</p>
+          <p>F4 = dca + /bc/a + /ca</p>
+        </div>
+        <img src="image-6.png" alt="Applications Karnaugh map" />
+      </div>
+    </div>
+  </body>
+</html>
