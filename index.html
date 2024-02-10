@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Karnaugh Map Simplification Method</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        max-width: 2000px; /* Increased to accommodate two columns */
+        margin: auto;
+        display: flex;
+        justify-content: space-around; /* Distributes space between columns */
+        flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+      }
+      .column {
+        width: 45%; /* Each column takes up 45% of the body width */
+        margin: 2.5%; /* Adds spacing between columns */
+      }
+      h1,
+      h2,
+      h4 {
+        text-align: left;
+        color: #333;
+      }
+      img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        display: block;
+        margin: 10px 0;
+      }
+      .remark,
+      .method-summary,
+      .applications,
+      .bordered-section {
+        font-style: italic;
+        margin-top: 10px;
+        border: 1px solid #000;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .remark-title,
+      .image-group,
+      .karnaugh-map {
+        font-weight: bold;
+      }
+      .image-caption,
+      .section-title {
+        text-align: center;
+        font-style: italic;
+        margin: 5px 0 15px 0;
+      }
+      .equations p {
+        margin: 5px 0; /* Spacing between equations */
+        white-space: nowrap; /* Ensure equations don't wrap */
+        font-family: 'Courier New', monospace; /* Monospace font for equations */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="column">
+      <h1>Simplification Method: The Karnaugh Map</h1>
+      <h2>I. Introduction:</h2>
+      <p>
+        In a previous lesson (on Boolean logic), we learned that the method of
+        simplifying equations by performing successive factorizations became
+        very time-consuming and tedious as the number of variables increased.
+        The Karnaugh map method allows us to perform simplifications much more
+        quickly without having to write long equations.
+      </p>
+      <h2>II. The Karnaugh Map:</h2>
+      <ul>
+        <li>
+          It is a table of 2<sup>n</sup> cases, n being the number of variables.
+        </li>
+        <li>
+          On the lines and columns, we place the state of the input variables in
+          reflected binary code (Gray code).
+        </li>
+        <li>
+          In each of the cases, we place the state of the output for the
+          corresponding input combinations.
+        </li>
+      </ul>
+      <p>
+        In the example below, the number of variables is 4 because the Karnaugh
+        Map contains 2<sup>4</sup> = 16 cases.
+      </p>
+      <img src="image.png" alt="Karnaugh Map Example" />
+      <h2>III. Simplification of equations from the Karnaugh Map:</h2>
+      <p>
+        The method consists of graphically highlighting, by a graphic process,
+        the terms of a logic function that differ only by the state of a single
+        variable (terms adjacent to each other). If the function logic depends
+        on N variables, there are 2<sup>N</sup> possible cases (principle of the
+        truth table).
+      </p>
+      <img
+        style="margin: auto"
+        src="image-2.png"
+        alt="Adjacent and Non-Adjacent Cases"
+      />
+      <p class="image-caption">
+        Non-adjacent cases &nbsp;&nbsp;&nbsp;&nbsp; Adjacent cases
+      </p>
+      <p class="image-caption">
+        Cases with the same number are examples of adjacent cases -> grouping
+        possible.
+      </p>
+      <div class="bordered-section">
+        <h3 class="section-title">Simplify the equations:</h3>
+        <p class="remark">
+          <span class="remark-title">Remarks:</span><br />
+          - One or more cases can be common to several groupings.<br />
+          - To extract the equation of the function logic, we only retain the
+          variables whose state does not change within a grouping and we apply
+          the same logic (OR) to all the proven groupings.<br />
+          - Grouping of 6 cases is impossible.
+        </p>
+        <p>
+          → Simplify the equations S1, S2, and S3 previously determined and
+          propose the corresponding logigrams.
+        </p>
+        <img src="image-1.png" alt="Karnaugh Map Groupings Example" />
+        <p class="image-caption">
+          The cases carrying the same number are examples of adjacent cases ->
+          grouping possible.
+        </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="image-group">
+        <p>Examples of possible groupings:</p>
+        <img src="image-3.png" alt="Examples of possible groupings" />
+      </div>
+
+      <div class="image-group">
+        <p>Examples of impossible or redundant groupings:</p>
+        <img
+          src="image-4.png"
+          alt="Examples of impossible or redundant groupings"
+        />
+      </div>
+
+      <div class="method-summary">
+        <p>Summary of the method:</p>
+        <ol>
+          <li>
+            Determine the number of input variables to know the size of the
+            tables.
+          </li>
+          <li>
+            Determine the number of output variables to define the number of
+            tables to perform.
+          </li>
+          <li>
+            Assign to the different products of the non-simplified equation a
+            case of the table respecting the Gray code.
+          </li>
+          <li>
+            Introduce the logical function into the table by positioning a '1'
+            in the cases that validate the function of the output.
+          </li>
+          <li>Perform the grouping of adjacent cases.</li>
+          <li>
+            Output the simplified function by eliminating the input variables
+            that change state.
+          </li>
+        </ol>
+      </div>
+
+      <div class="applications">
+        <h4>IV. Applications</h4>
+        <h4>Equation Simplification</h4>
+        <img src="image-5.png" alt="Equation Simplification Karnaugh map" />
+        <div class="karnaugh-map">
+          <div class="equations">
+            <p>F1 = /abc + c/b/a + /bc/a + /c/ab</p>
+            <p>F2 = ab + /ba</p>
+            <p>F3 = /d/cba + /dcb/a + /dc/ba + /d/cba</p>
+            <p>F4 = dca + /bc/a + /ca</p>
+          </div>
+          <img src="image-6.png" alt="Applications Karnaugh map" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
